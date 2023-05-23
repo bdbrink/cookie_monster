@@ -8,3 +8,10 @@ def new_cookie():
     response.set_cookie("mycookie", "myvalue")
 
     return response
+
+@app.route("/show_cookie")
+def show_cookie():
+    cookie_value = request.cookies.get("mycookie")
+
+    return cookie_value
+
