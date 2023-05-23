@@ -15,3 +15,5 @@ def show_cookie():
 
     return cookie_value
 
+if __name__ == "__main__":
+    app.run(debug=True, host="localhost", port=9999)
