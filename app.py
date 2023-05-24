@@ -1,6 +1,11 @@
-from flask import Flask, make_response, request
+from flask import Flask, make_response, request, render_template
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder="templates")
+
+@app.route("/")
+def index():
+    saved_name = request.cookies.get("saved_name")
+    return render_template("index.html")
 
 @app.route("/new_cookie")
 def new_cookie():
